@@ -7,9 +7,9 @@ app.grid_columnconfigure(0, weight=1)
 # app.after(0, lambda:app.state('zoomed'))
 app.attributes('-zoomed', True)
 
-# imgtemp = CTkImage(light_image=Image.open("homeback1.jpg"), size=(app.winfo_screenwidth(), app.winfo_screenheight()))
-# imgLabel = CTkLabel(app, image=imgtemp, text='')
-# imgLabel.place(relx=0.5, rely=0.5, anchor="center")
+imgtemp = CTkImage(light_image=Image.open("homeback1.jpg"), size=(app.winfo_screenwidth(), app.winfo_screenheight()))
+imgLabel = CTkLabel(app, image=imgtemp, text='')
+imgLabel.place(relx=0.5, rely=0.5, anchor="center")
 
 def addStudent():
     app.withdraw()
