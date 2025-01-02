@@ -9,7 +9,7 @@ app.grid_columnconfigure(0, weight=1)
 app.after(0, lambda:app.state('zoomed'))
 
 # username = "admin"
-imgTemp = CTkImage(light_image=Image.open("back2.jpg"), size=(app.winfo_screenwidth(), app.winfo_screenheight()))
+imgTemp = CTkImage(light_image=Image.open("back1.jpg"), size=(app.winfo_screenwidth(), app.winfo_screenheight()))
 # img2 = imgTemp.resize((app.winfo_screenwidth(), app.winfo_screenheight()))
 # img = ImageTk.PhotoImage(imgTemp, size=(app.winfo_screenwidth(), app.winfo_screenheight()))
 img_label = CTkLabel(app, image=imgTemp, text='')

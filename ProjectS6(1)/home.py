@@ -4,37 +4,50 @@ import subprocess
 
 app = CTk()
 app.grid_columnconfigure(0, weight=1)
-# app.after(0, lambda:app.state('zoomed'))
-app.attributes('-zoomed', True)
+app.after(0, lambda:app.state('zoomed'))
 
 imgtemp = CTkImage(light_image=Image.open("homeback1.jpg"), size=(app.winfo_screenwidth(), app.winfo_screenheight()))
 imgLabel = CTkLabel(app, image=imgtemp, text='')
 imgLabel.place(relx=0.5, rely=0.5, anchor="center")
 
 def addStudent():
-    app.withdraw()
-    subprocess.run([sys.executable, "addstudent.py"])
-    app.deiconify()
     # app.deiconify()
     # import addstudent
     # CTkToplevel(addstudent)
-    # app.destroy()
-    # subprocess.run([sys.executable, "addstudent.py"])
+    app.withdraw()
+    subprocess.run([sys.executable, "addStudent.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 def modifyStudent():
-    pass
+    app.withdraw()
+    subprocess.run([sys.executable, "modifyStudent.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 def addFaculty():
-    pass
+    app.withdraw()
+    subprocess.run([sys.executable, "addFaculty.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 def modifyFaculty():
-    pass
+    app.withdraw()
+    subprocess.run([sys.executable, "modifyFaculty.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 def addCourse():
-    pass
+    app.withdraw()
+    subprocess.run([sys.executable, "addCourse.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 def modifyCourse():
-    pass
+    app.withdraw()
+    subprocess.run([sys.executable, "modifyCourse.py"])
+    app.deiconify()
+    app.after(0, lambda:app.state('zoomed'))
 
 CTkButton(app, text="Add Student", width=350, height=50, font=("Consolas", 20), command=addStudent).place(relx=0.5, rely=0.2, anchor="center")
 CTkButton(app, text="Modify Student", width=350, height=50, font=("Consolas", 20), command=modifyStudent).place(relx=0.5, rely=0.3, anchor="center")
