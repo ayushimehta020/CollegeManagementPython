@@ -75,12 +75,24 @@ CTkLabel(frm, text="Enter Address").grid(row=9, column=1, padx=12, pady=(0, 10),
 # scrollb.grid(row=8, column=2, padx=(240, 0))
 # txt['yscrollcommand'] = scrollb.set
 
-Result = tkinter.Text(frm,height=3,width=27)
-Result.place(x=208, y=340)
+# Result = tkinter.Text(frm,height=3,width=27)
+# Result.place(x=208, y=340)
  
-Scroll = tkinter.Scrollbar(frm,command=Result.yview)
-Scroll.grid(row=9,column=3,padx=12,sticky='NS')
-Result.config(yscrollcommand=Scroll.set)
+# Scroll = tkinter.Scrollbar(frm,command=Result.yview)
+# Scroll.grid(row=9,column=3,padx=12,sticky='NS')
+# Result.config(yscrollcommand=Scroll.set)
+
+text_frame = CTkFrame(frm, width=220, height=100, fg_color="transparent")
+text_frame.grid(row=9, column=2, pady=(0, 10), sticky="nsew", padx=10)
+
+# Add the Text widget
+Result = tkinter.Text(text_frame, height=5, width=30, wrap="word", bd=0, relief="flat")
+Result.pack(side="left", fill="both", expand=True)
+
+# Add the scrollbar inside the same frame
+Scroll = tkinter.Scrollbar(text_frame, command=Result.yview)
+Scroll.pack(side="right", fill="y")
+Result.config(yscrollcommand=Scroll.set)  # Linking Text widget with Scrollbar
 
 CTkButton(frm, text="Insert", width=180).grid(row=10, column=1, padx=(14, 6), pady=(30, 20))
 CTkButton(frm, text="Clear", width=180, fg_color="red").grid(row=10, column=2, padx=6, pady=(30, 20))
